@@ -23,35 +23,37 @@ type Props = {
   };
 };
 
+export const revalidate = 60; // revalidate this page every 60 seconds
+
+
+
+function formatSlug(slug: string): string {
+  const words = slug.split("-");
+  const formattedSlug = words
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  return formattedSlug;
+}
 async function fetchPostData(slug: string): Promise<Post[]> {
+
+ const formattedSlug = formatSlug(slug);
+
   const query = groq`
 
-   *[_type == 'post' && $slug in categories[]->title]
+   *[_type == 'post' && $formattedSlug in categories[]->title]
     {
       ...,
       author->,
       "comments": *[_type == "comment" && references(^._id) && approved == true],
       categories[]->
     }
-    // *[_type == 'post' && $slug in categories[]->title]
-    // {
-    //   ...,
-    //   author->,
-    //   "comments": *[_type == "comment" && references(^._id) && approved == true],
-    //   categories[]->
-    // }
-    //     *[_type == 'post' && references(categories[]._ref) && categories[].slug.current == $slug]
-    // {
-    //   ...,
-    //   author->,
-    //   "comments": *[_type == "comment" && references(^._id) && approved == true],
-    //   categories[]->
-    // }
+  
   `;
 
-  const posts: Post[] = await client.fetch(query, { slug });
+  const posts: Post[] = await client.fetch(query, { formattedSlug });
 
-  console.log(posts, slug)
+  
   return posts;
 }
 
@@ -116,7 +118,8 @@ function Category({ params: { slug } }: Props) {
             <div className=" grid grid-cols-1 gap-10 text-center max-w-6xl mx-auto  ">
               <div className="bg-white px-5 py-16">
                 <div className=" grid grid-cols-1 gap-10 text-center max-w-4xl mx-auto  ">
-                  {posts.map((post) => (
+
+                  {posts.length !== 0 ? (  posts.map((post) => (
                     <div key={post._id}>
                       <PostComponent
                         slug={post.slug.current}
@@ -174,7 +177,13 @@ function Category({ params: { slug } }: Props) {
                         </motion.div>
                       )}
                     </div>
-                  ))}
+                  ))) : (
+                    <div>
+                      <h2 className="text-lg font-semibold font-Sohne-Bold">No Post found </h2>
+                    </div>
+                  )}
+                
+               
                 </div>
               </div>
             </div>

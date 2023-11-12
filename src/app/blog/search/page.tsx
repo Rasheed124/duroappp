@@ -17,6 +17,7 @@ import PostComponent from "@/components/site/Blog/Post";
 import urlFor from "../../../../sanity/lib/image";
 
 
+export const revalidate = 60; // revalidate this page every 60 seconds
 
 const fetchPosts = async (url: string) => {
   const response = await fetch(url);

@@ -15,6 +15,9 @@ import ProductBanner from "@/components/site/Home/ProductBanner/ProductBanner";
 import PostList from "@/components/site/Home/PostList";
 import ContactInfo from "@/components/site/Contact/ContactInfo";
 
+export const revalidate = 60; // revalidate this page every 60 seconds
+
+
 export default async function Home() {
   const contactData = await getContact();
 

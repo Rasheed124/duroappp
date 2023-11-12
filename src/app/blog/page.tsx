@@ -7,7 +7,6 @@ import { Metadata } from "next";
 import { getBlogList } from "../../../sanity/utils/sanity.utils";
 import BlogList from "@/components/site/Blog/BlogList";
 
-export const revalidate = 60; // revalidate this page every 60 seconds
 
 
 export const metadata: Metadata = {
@@ -22,6 +21,9 @@ export const metadata: Metadata = {
     },
   },
 };
+
+export const revalidate = 60; // revalidate this page every 60 seconds
+
 
 export default async function BlogPage() {
   const blogList = await getBlogList();

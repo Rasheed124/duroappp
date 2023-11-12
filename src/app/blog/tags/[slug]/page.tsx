@@ -30,6 +30,9 @@ type Props = {
 };
 
 
+export const revalidate = 60; // revalidate this page every 60 seconds
+
+
 function Tag({ params: { slug } }: Props) {
   const [relatedPosts, setRelatedPosts] = useState<Post[]>([]);
 

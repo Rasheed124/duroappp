@@ -3,6 +3,9 @@ import { Metadata } from "next";
 import { groq } from "next-sanity";
 import { client } from "../../../sanity/lib/client";
 
+export const revalidate = 60; // revalidate this page every 60 seconds
+
+
 export const metadata: Metadata = {
   title: "Resume ",
 

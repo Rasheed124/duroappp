@@ -8,6 +8,8 @@ import { Metadata } from "next";
 import { getMarketWriting } from "../../../sanity/utils/sanity.utils";
 
 
+
+
 export const metadata: Metadata = {
   title: "Digital Marketing ",
 
