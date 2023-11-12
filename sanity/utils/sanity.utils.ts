@@ -18,7 +18,7 @@ export async function getSkills(): Promise<Skills[]> {
                ...,
              "image" : image.asset->url,
             }
-             } | order(_createdAt desc)`,
+             } | order(_updatedAt desc)`,
   );
 }
 
@@ -32,7 +32,7 @@ export async function getAllPortfolioProjects() {
               ...,
                  
            
-             } | order(_createdAt asc)`;
+             } |  order(priority desc, _updatedAt desc)`;
   const productUiUXQuery = groq`
             *[_type == 'productUiUxs' ][0...2]
 {
@@ -41,14 +41,14 @@ export async function getAllPortfolioProjects() {
               ...,
                
            
-             } | order(_createdAt asc)`;
+             } | order(priority desc, _updatedAt desc)`;
 
   const dataAnalystQuery = groq`
             *[_type == "dataAnalyst"][0...1]{
             ...,
          
          
-             } | order(_createdAt asc)
+             } | order(priority desc, _updatedAt desc)
         `;
   const marketWritingQuery = groq`
             *[_type == 'marketWriting' ][0...1]
@@ -58,7 +58,7 @@ export async function getAllPortfolioProjects() {
               ...,
               
            
-             } | order(_createdAt asc)`;
+             } | order(priority desc, _updatedAt desc)`;
 
   const graphics: Projects[] = await client.fetch(graphicsQuery);
   const product: Projects[] = await client.fetch(productUiUXQuery);
