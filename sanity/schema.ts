@@ -4,6 +4,7 @@ import blockContent from './schemas/blockContent'
 import category from './schemas/category'
 import post from './schemas/post'
 import author from './schemas/author'
+import comment from './schemas/comment'
 // Contact
 import contact from './schemas/contact/contact'
 // Home
@@ -26,6 +27,7 @@ import proEducation from './schemas/about/education/pro-education'
 import proRecognition from './schemas/about/recognition/pro-recognition'
 import productMarketing from './schemas/product/productMarketing'
 import proCertification from './schemas/about/certification/pro-certification'
+import testimonial from './schemas/home/testimonial'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -33,11 +35,14 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     author,
     category,
     blockContent,
+    comment,
     contact,
     skill,
     skills,
     about,
     company,
+
+    testimonial,
 
     marketing,
     marketingPost,

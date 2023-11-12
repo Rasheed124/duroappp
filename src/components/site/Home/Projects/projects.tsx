@@ -56,7 +56,7 @@ const Projects =  ({ projects}: Props) => {
                           : projects.indexOf(project) + 1}
                       </span>
 
-                      <h4 className="font-Antonio font-bold text-7xl lg:text-8xl uppercase relative after:content-[''] after:absolute after:-bottom-4 after:left-0  after:w-0 after:h-0 after:transition-all after:duration-700 after:bg-light-white hover:after:w-full hover:after:h-1 ">
+                      <h4 className="font-Antonio font-bold text-6xl lg:text-8xl uppercase relative after:content-[''] after:absolute after:-bottom-4 after:left-0  after:w-0 after:h-0 after:transition-all after:duration-700 after:bg-light-white hover:after:w-full hover:after:h-1 ">
                         {project.title}
                       </h4>
                     </div>

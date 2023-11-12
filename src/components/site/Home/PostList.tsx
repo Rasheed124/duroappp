@@ -8,8 +8,9 @@ import { AiOutlineHeart } from "react-icons/ai";
 
 import { motion } from "framer-motion";
 import ClientSideRoute from "../ClientSideRoute";
-import urlFor from "@/lib/urlFor";
+
 import { HiArrowNarrowRight } from "react-icons/hi";
+import urlFor from "../../../../sanity/lib/image";
 
 type Props = {
   postList: Post[];
@@ -42,14 +43,16 @@ const PostList = ({ postList }: Props) => {
                     >
                       <div className="pb-4">
                         <ClientSideRoute route={`/post/${post.slug.current}`}>
-                          <div className="relative h-[200px] w-full">
+                          <div className="max-w-xl mx-auto w-full">
                             <Image
-                              className="object-cover object-left lg:object-center"
+                              className="max-w-full"
                               src={urlFor(post.mainImage).url()}
                               alt={post.title}
-                              fill
+                              width={700}
+                              height={700}
                             />
                           </div>
+                      
                         </ClientSideRoute>
                       </div>
 

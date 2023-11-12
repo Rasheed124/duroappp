@@ -5,9 +5,10 @@ import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
 import { motion } from "framer-motion";
-// import urlFor from "@/lib/urlFor";
+
 
 import productBanner from "@/app/assets/prodbanner.png";
+import urlFor from "../../../../../sanity/lib/image";
 
 
 type Props = {
@@ -35,13 +36,13 @@ const ProductBanner = ({ products }: Props) => {
                 
                 {product.image && (
                   <div className="max-w-md  lg:max-w-xl mx-auto">
-                    {/* <Image
+                    <Image
                       src={urlFor(product.image).url()}
                       alt=""
                       width={500}
                       height={500}
                       className="max-w-full "
-                    /> */}
+                    />
                   </div>
                 )}
               </div>
@@ -64,7 +65,7 @@ const ProductBanner = ({ products }: Props) => {
                 <h2 className="font-Sohne-Bold  text-lg uppercase">
                   {product.title && product.title}
                 </h2>
-                <h3 className=" font-bold  text-xl">
+                <h3 className=" font-bold font-libre-baskerville  text-2xl">
                   {product.text && product.text}
                   {/* <span>Get More Trafic </span> <br />{" "}
                   <span className="font-Sohne-Bold text-xl lg:text-2xl ">
@@ -78,7 +79,7 @@ const ProductBanner = ({ products }: Props) => {
                 {product.strategies && (
                   <div className="grid grid-cols-2  gap-4 py-4 ">
                     {Array.from(product.strategies).map((strategy, id) => (
-                      <h4 key={id} className=" text-lg flex gap-2 items-center">
+                      <h4 key={id} className=" text-lg flex  flex-wrap gap-1 items-center">
                         <span className="">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"

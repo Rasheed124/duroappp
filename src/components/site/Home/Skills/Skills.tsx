@@ -5,7 +5,7 @@ import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
 import { motion } from "framer-motion";
-// import urlFor from "@/lib/urlFor";
+import urlFor from "../../../../../sanity/lib/image";
 
 type Props = {
   skills: Skills[];
@@ -14,7 +14,7 @@ type Props = {
 const Skills = ({ skills }: Props) => {
   return (
     <section className="py-16 lg:py-20 ">
-      {skills.map((skill) => (
+      {skills && skills.map((skill) => (
         <div key={skill._id} className="flex flex-col max-w-6xl mx-auto   ">
           <div className="  text-center py-7 px-5 ">
             <h2 className="font-Sohne-Bold text-lg pb-3 mb-5 xl:mb-0 uppercase">
@@ -50,19 +50,23 @@ const Skills = ({ skills }: Props) => {
                   }}
                 >
                   <div className="mb-5 relative w-[150px] h-[100px]">
-                    {/* <Image
-                      src={urlFor(skillDetail.image).url()}
-                      alt={skillDetail.title}
-                      fill
-                      className="w-full absolute top-0 left-0 max-w-full"
-                    /> */}
+                    {skillDetail.image && (
+                      <Image
+                        src={urlFor(skillDetail.image).url()}
+                        alt={skillDetail.title}
+                        fill
+                        className="w-full absolute top-0 left-0 max-w-full"
+                      />
+                    )}
                   </div>
                   <div className="space-y-5 ">
                     <h4 className="font-Antonio text-lg text-left xl:text-xl font-bold uppercase">
                       {skillDetail.title}
                     </h4>
 
-                    <p className="text-lg text-left">{skillDetail.description}</p>
+                    <p className="text-lg text-left">
+                      {skillDetail.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
