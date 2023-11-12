@@ -40,6 +40,20 @@ export default defineType({
         },
       ],
     }),
+        defineField({
+      name: "tags",
+      title: "Tags",
+      type: "array",
+
+      of: [{ type: "string" }],
+      options: {
+        layout: "tags",
+      },
+
+      description: "Enter tags in lowercase",
+      validation: (Rule) =>
+        Rule.max(120).warning(`tags title should be in uppercase.`),
+    }),
     defineField({
       name: "categories",
       title: "Categories",

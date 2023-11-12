@@ -86,17 +86,6 @@ async function GraphicsProject({ params }: Props) {
                         />
                       </div>
                     )}
-
-                    {project.video && (
-                      <div className="space-y-5">
-                        <video
-                          src={`${project.video}`}
-                          width={500}
-                          height={500}
-                          controls
-                        ></video>
-                      </div>
-                    )}
                   </div>
                 </div>
               ))}

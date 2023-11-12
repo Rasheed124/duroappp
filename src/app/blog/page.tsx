@@ -1,33 +1,36 @@
+
+
+
 import Layout from "@/components/site/Navbars/NavbarLayout";
-import PortfolioProject from "@/components/site/Portfolio/PortfolioProject";
 
 import { Metadata } from "next";
-import { getAllRequiredProjects } from "../../../sanity/utils/sanity.utils";
+import { getBlogList } from "../../../sanity/utils/sanity.utils";
+import BlogList from "@/components/site/Blog/BlogList";
 
 export const revalidate = 60; // revalidate this page every 60 seconds
 
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Blog",
 
   description: "Creating useful Content ",
 
   alternates: {
-    canonical: "/portfolio",
+    canonical: "/blog",
     languages: {
       "en-CA": `en-CA`,
     },
   },
 };
 
-export default async function PortfolioPage() {
-  const allProjects = await getAllRequiredProjects();
+export default async function BlogPage() {
+  const blogList = await getBlogList();
 
   return (
     <>
       <div className=" ">
         <Layout route="/all">
-          <PortfolioProject portfolioPage={allProjects} />
+          <BlogList blogs={blogList}/>
         </Layout>
       </div>
     </>

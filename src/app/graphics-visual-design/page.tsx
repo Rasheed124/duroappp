@@ -7,6 +7,10 @@ import { Metadata } from "next";
 import { getGraphicVisualDs } from "../../../sanity/utils/sanity.utils";
 
 
+
+export const revalidate = 60; // revalidate this page every 60 seconds
+
+
 export const metadata: Metadata = {
   title: "Graphics Visual Design ",
 

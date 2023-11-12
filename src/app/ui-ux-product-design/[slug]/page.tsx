@@ -16,6 +16,8 @@ type Props = {
   };
 };
 
+export const revalidate = 60; // revalidate this page every 60 seconds
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = await getSingleUiUxProductDesigns(params.slug);
 
@@ -69,7 +71,7 @@ async function UiUxProductProject({ params }: Props) {
 
           <div>
             <div>
-              {project.projectContent && project.projectContent.map((project) => (
+              {project.projectContent.map((project) => (
                 <div key={project._id}>
                   <div className="space-y-5 flex flex-col justify-center items-center">
                     {project.image && (
@@ -83,17 +85,6 @@ async function UiUxProductProject({ params }: Props) {
                         />
                       </div>
                     )}
-
-                    {project.video && (
-                      <div className="space-y-5">
-                        <video
-                          src={`${project.video}`}
-                          width={500}
-                          height={500}
-                          controls
-                        ></video>
-                      </div>
-                    )}
                   </div>
                 </div>
               ))}
@@ -102,7 +93,7 @@ async function UiUxProductProject({ params }: Props) {
 
           {/* CONTENT */}
           <div>
-            <div className="space-y-5 ">
+            <div className="space-y-5  sticky top-32 ">
               {/* Title */}
               <h2 className="text-6xl uppercase font-Antonio text-deep-black font-bold ">
                 {project.title}

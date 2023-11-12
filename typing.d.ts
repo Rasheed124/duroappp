@@ -128,7 +128,7 @@ interface ProjectTds extends Base {
 // Project Content
 interface ProjectContent extends Base {
   title: string;
-  image: string;
+  image: Image;
   url: string;
   video: string;
 }

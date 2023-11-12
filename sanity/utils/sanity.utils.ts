@@ -227,7 +227,15 @@ export async function getSingleUiUxProductDesigns(
     groq`*[_type == "productUiUxs" && slug.current == $slug][0]{
             _id,
               ...,
-      
+                      projectContent[]->{
+
+                  title,
+
+            "image" : image.asset->url,
+
+                 
+            }
+           
            
            
              }  `,
@@ -260,13 +268,7 @@ export async function getSingleGraphicVisualDs(
 
             "image" : image.asset->url,
 
-            //     _type == "muxVideo" => {
-            // ...,
-            // asset->{
-            
-            //     "video": "https://stream.mux.com/" + playbackId
-            //     }
-            // },          
+                
             }
            
              }  `,

@@ -18,11 +18,5 @@ export default defineType({
         hotspot: true,
       },
     }),
-
-    // defineField({
-    //   name: "video",
-    //   title: "Video",
-    //   type: "mux.video",
-    // }),
   ],
 });

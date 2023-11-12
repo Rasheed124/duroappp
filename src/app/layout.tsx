@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { fonts } from "../fonts/font";
 import './globals.css'
+import Providers from "@/components/site/Providers";
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://durodolaportfolio.pages.dev"),
@@ -21,16 +23,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body 
+      <body
         className={`${fonts.antonio.variable} ${fonts.sohneBold.variable} ${fonts.migraLight.variable} ${fonts.libre_baskerville.variable} bg-transparent `}
       >
         <main className="bg-transparent ">
           <div className="max-w-8xl mx-auto ">
-             {children}
+            <Providers>{children}</Providers>
           </div>
         </main>
-        
-        </body>
+      </body>
     </html>
-  )
+  );
 }
