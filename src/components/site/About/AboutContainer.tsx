@@ -74,28 +74,9 @@ const AboutContainer = ({ abouts, contactPage, awards}: Props) => {
           }}
         >
           <nav
-            className={`
-                                 
-                                 ${
-                                   !isAboveSmallScreens
-                                     ? "bg-deep-black fixed w-full z-[80] top-0 text-light-white transition duration-700 translate-y-0"
-                                     : isScrollSize
-                                     ? "bg-deep-black fixed w-full z-[80] top-0 text-light-white transition duration-700 translate-y-0 "
-                                     : "bg-transparent pt-4 mx-10 z-[80] text-light-white transform transition duration-700 translate-y-3"
-                                 } }
-                             
-                             `}
-          >
+            className={` ${!isAboveSmallScreens ? "bg-deep-black fixed w-full z-[80] top-0 text-light-white transition duration-700 translate-y-0": isScrollSize ? "bg-deep-black fixed w-full z-[80] top-0 text-light-white transition duration-700 translate-y-0 ": "bg-transparent pt-4 mx-10 z-[80] text-light-white transform transition duration-700 translate-y-3"}  `} >
             <div
-              className={`
-                                        ${
-                                          !isAboveSmallScreens
-                                            ? "border-0 py-6 px-5"
-                                            : isScrollSize
-                                            ? "border-0 py-6 px-5"
-                                            : "py-6 border-t border-white"
-                                        }
-                                    `}
+              className={`${!isAboveSmallScreens ? "border-0 py-6 px-5" : isScrollSize ? "border-0 py-6 px-5" : "py-6 border-t border-white" }`}
             >
               <div className=" flex justify-between items-center">
                 <Link

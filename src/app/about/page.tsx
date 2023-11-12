@@ -1,5 +1,4 @@
 import Layout from "@/components/site/Navbars/NavbarLayout";
-import Image from "next/image";
 import { getAbout, getAwards, getContact } from "../../../sanity/utils/sanity.utils";
 import AboutContainer from "@/components/site/About/AboutContainer";
 
