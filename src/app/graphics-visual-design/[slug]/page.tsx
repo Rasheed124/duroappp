@@ -72,7 +72,7 @@ async function GraphicsProject({ params }: Props) {
 
           <div>
             <div>
-              {project.projectContent && project.projectContent.map((project) => (
+              { project.projectContent.map((project) => (
                 <div key={project._id}>
                   <div className="space-y-5 flex flex-col justify-center items-center">
                     {project.image && (
