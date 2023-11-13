@@ -34,7 +34,11 @@ const Testimonial = ({ testimonials }: Props) => {
         <div className=" px-5">
           <Swiper
             modules={[Navigation, EffectFade]}
-            autoplay={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: true,
+            }}
+            loop={true}
             effect="crossfade"
             grabCursor={true}
             speed={1000}

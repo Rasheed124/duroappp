@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: `%s - Durodola Abdulhad - Digital Marketing & Design Expert | Data Analytics & Growth Strategy`,
   },
   description:
-    "Durodola Abdulhad - Expert in Digital Marketing, Visual Design, Product Management, Data Analytics, and Growth Hacking, delivering creative and data-driven solutions for businesses of all sizes.",
+    "Durodola Abdulhad - Digital Marketing, Visual Design, Product Management, Growth Hacking expert. Creative, data-driven solutions for all business sizes",
   verification: {
     //   google: "google-site-verification=878787878",
   },
