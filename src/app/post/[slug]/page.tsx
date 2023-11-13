@@ -2,7 +2,7 @@ import Layout from "@/components/site/Navbars/NavbarLayout";
 
 
 
-import type { Metadata, ResolvedMetadata } from "next";
+import type { Metadata } from "next";
 import { getSinglePost } from "../../../../sanity/utils/sanity.utils";
 import PostPage from "@/components/site/Post/PostPage";
 import urlFor from "../../../../sanity/lib/image";
@@ -17,10 +17,10 @@ type Props = {
 
 export const revalidate = 60; // revalidate every 30 seconds
 
-export async function generateMetadata({ params }: Props , parent : ResolvedMetadata): Promise<Metadata> {
+export async function generateMetadata({ params }: Props ): Promise<Metadata> {
   const post = await getSinglePost(params.slug);
 
-  const previousImages =  (await parent).openGraph?.images || []
+ 
 
   const imageUrl = post.mainImage.asset._ref
 
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props , parent : ResolvedMeta
       },
     },
     openGraph: {
-      images: [imageUrl, ...previousImages],
+      images: [imageUrl],
     },
   };
 }
