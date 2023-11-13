@@ -9,12 +9,13 @@ export const RichTextComponents = {
   types: {
     image: ({ value }: any) => {
       return (
-        <div className="relative h-[340px] w-full">
+        <div className=" max-w-3xl  mx-auto  ">
           <Image
-            className=" max-w-full lg:object-center"
+            className=" max-w-full "
             src={urlFor(value).url()}
             alt="Blog Post Image"
-            fill
+            width={1000}
+            height={1000}
           />
         </div>
       );
@@ -30,6 +31,9 @@ export const RichTextComponents = {
     ),
   },
   block: {
+    p: ({ children }: any) => (
+      <p className="text-base py-5 font-bold">{children}</p>
+    ),
     h1: ({ children }: any) => (
       <h1 className="text-5xl py-10 font-bold">{children}</h1>
     ),

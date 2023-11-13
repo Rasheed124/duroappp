@@ -316,36 +316,36 @@ function PostPage({ params: { slug } }: Props) {
               {/* Post */}
               <div className="mt-16  max-w-4xl  shadow-sm mx-auto   p-3.5 px-10  ">
                 <div className="flex justify-between items-center ">
-                  <div className="flex  space-x-5 ">
-                    <div className="flex justify-center items-center">
+                  <div className="flex w-full  flex-col lg:flex-row justify-center lg:justify-start text-center items-center space-x-5 ">
+                    <div className="flex flex-col lg:flex-row justify-center items-center">
                       <Image
                         className="rounded-full object-cover mr-2"
                         src={urlFor(post.author.image).url()}
                         alt={post.author.name}
-                        width={30}
-                        height={30}
+                        width={50}
+                        height={50}
                       />
 
-                      <span className=" font-bold  text-lg whitespace-nowrap ">
+                      <span className=" font-bold font-Sohne-Bold text-lg whitespace-nowrap ">
                         {post.author.name}
                       </span>
                     </div>
 
-                    <div className="flex justify-center items-center">
-                      <span className="whitespace-nowrap">
+                    <div className="flex flex-col lg:flex-row justify-center items-center">
+                      <span className="">
                         {new Date(post._createdAt).toLocaleDateString("en-Us", {
                           day: "numeric",
                           month: "long",
                           year: "numeric",
                         })}
                       </span>
-                      <span className="font-semibold ml-5 whitespace-nowrap">
+                      <span className="font-medium lg:ml-5 ">
                         8 min Read
                       </span>
                     </div>
                   </div>
 
-                  <div className="ml-3 flex flex-wrap max-w-md">
+                  <div className="ml-3  flex flex-wrap ">
                     <span className="block cursor-pointer relative">
                       <BiDotsVerticalRounded
                         onClick={() => setIsShowSharePost(!ShowSharePost)}
@@ -365,7 +365,7 @@ function PostPage({ params: { slug } }: Props) {
                   </div>
                 </div>
 
-                <div className="my-2 p-2 ">
+                <div className="my-2 p-2 text-center lg:text-left">
                   <h3 className="font-semibold text-xl font-Sohne-Bold mb-3">
                     {post.title}
                   </h3>
@@ -401,10 +401,10 @@ function PostPage({ params: { slug } }: Props) {
                         >
                           <ClientSideRoute
                             route={`/blog/tags/${tag
-                             .toLowerCase() // Convert to lowercase
-                            .trim() // Remove leading and trailing spaces
-                            .split(" ") // Split the string into an array of words based on spaces
-                            .join("-") // Join the words with hyphens
+                             .toLowerCase()
+                            .trim() 
+                            .split(" ") 
+                            .join("-") 
                             
                             }`}
                           >
@@ -425,10 +425,10 @@ function PostPage({ params: { slug } }: Props) {
                         >
                           <ClientSideRoute
                             route={`/blog/categories/${cat.title
-                            .toLowerCase() // Convert to lowercase
-                            .trim() // Remove leading and trailing spaces
-                            .split(" ") // Split the string into an array of words based on spaces
-                            .join("-") // Join the words with hyphens
+                            .toLowerCase() 
+                            .trim() 
+                            .split(" ") 
+                            .join("-") 
                               
                             }`}
                           >

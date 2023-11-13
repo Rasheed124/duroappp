@@ -2,12 +2,12 @@ import Layout from "@/components/site/Navbars/NavbarLayout";
 
 
 
-import type { Metadata } from "next";
+import type { Metadata, ResolvedMetadata } from "next";
 import { getSinglePost } from "../../../../sanity/utils/sanity.utils";
 import PostPage from "@/components/site/Post/PostPage";
+import urlFor from "../../../../sanity/lib/image";
 
 
-// import PostPage from "@/components/site/Post/PostPage";
 
 type Props = {
   params: {
@@ -17,14 +17,21 @@ type Props = {
 
 export const revalidate = 60; // revalidate every 30 seconds
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props , parent : ResolvedMetadata): Promise<Metadata> {
   const post = await getSinglePost(params.slug);
+
+  const previousImages =  (await parent).openGraph?.images || []
+
+  const imageUrl = post.mainImage.asset._ref
+
+
 
   if (!post)
     return {
       title: "Not Found",
       description: "This page is not found",
     };
+
 
   return {
     title: post.title,
@@ -34,6 +41,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         "en-CA": `en-CA/post/${post.slug}`,
       },
+    },
+    openGraph: {
+      images: [imageUrl, ...previousImages],
     },
   };
 }

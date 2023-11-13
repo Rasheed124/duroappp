@@ -25,6 +25,8 @@ export default defineType({
       // use your content.
       styles: [
         {title: 'Normal', value: 'normal'},
+        {title: 'SPAN', value: 'span'},
+        {title: 'P', value: 'p'},
         {title: 'H1', value: 'h1'},
         {title: 'H2', value: 'h2'},
         {title: 'H3', value: 'h3'},
