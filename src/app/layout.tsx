@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://durodolaabdulhad.com"),
   title: {
     default:
-      "Durodola Abdulhad | Digital Marketing & Design Expert ",
+      "Durodola Abdulhad | Digital Marketing & Design Expert | Growth Strategy",
     template: `%s - Durodola Abdulhad - Digital Marketing & Design Expert | Data Analytics & Growth Strategy`,
   },
   description:
