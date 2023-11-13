@@ -5,12 +5,14 @@ import Providers from "@/components/site/Providers";
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://durodolaportfolio.pages.dev"),
+  metadataBase: new URL("https://durodolaabdulhad.com"),
   title: {
-    default: "Durodola Abdulhad",
-    template: `%s - Durodola Abdulhad`,
+    default:
+      "Durodola Abdulhad - Digital Marketing & Design Expert | Data Analytics & Growth Strategy",
+    template: `%s - Durodola Abdulhad - Digital Marketing & Design Expert | Data Analytics & Growth Strategy`,
   },
-  description: "Am a GRAPHICS & PRODUCT DESIGN",
+  description:
+    "Durodola Abdulhad: Expert in Digital Marketing, Visual Design, Product Management, Data Analytics, and Growth Hacking, delivering creative and data-driven solutions for businesses of all sizes.",
   verification: {
     //   google: "google-site-verification=878787878",
   },

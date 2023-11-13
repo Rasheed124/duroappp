@@ -1,5 +1,5 @@
 export default async function sitemap() {
-  const baseUrl = "https://durodolaportfolio.pages.dev";
+  const baseUrl = "https://durodolaabdulhad.com";
 
 //   const posts = await getAllPosts();
 //   const postUrls = posts.map((post) => ({

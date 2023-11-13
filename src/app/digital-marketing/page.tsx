@@ -15,6 +15,21 @@ export const metadata: Metadata = {
 
   description: "Creating useful Content ",
 
+  openGraph: {
+    title: "Digital Marketing ",
+    description:
+      "Digital Marketing & Design Expert | Data Analytics & Growth Strategy",
+    url: "durodolaabdulhad.com",
+    siteName: "Durodola Abdulhad",
+    images: [
+      {
+        url: "Durodola",
+        width: 1200,
+        height: 800,
+      },
+    ],
+  },
+
   alternates: {
     canonical: "/digital-marketing",
     languages: {

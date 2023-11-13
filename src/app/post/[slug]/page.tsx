@@ -5,7 +5,7 @@ import Layout from "@/components/site/Navbars/NavbarLayout";
 import type { Metadata } from "next";
 import { getSinglePost } from "../../../../sanity/utils/sanity.utils";
 import PostPage from "@/components/site/Post/PostPage";
-import urlFor from "../../../../sanity/lib/image";
+
 
 
 

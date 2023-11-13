@@ -7,7 +7,20 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description: "Creating useful Content ",
-
+  openGraph: {
+    title: "About",
+    description:
+      "Digital Marketing & Design Expert | Data Analytics & Growth Strategy",
+    url: "durodolaabdulhad.com",
+    siteName: "Durodola Abdulhad",
+    images: [
+      {
+        url: "Durodola",
+        width: 1200,
+        height: 800,
+      },
+    ],
+  },
 };
 
 export const revalidate = 60; // revalidate this page every 60 seconds

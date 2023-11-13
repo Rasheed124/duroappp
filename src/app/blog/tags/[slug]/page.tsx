@@ -20,6 +20,8 @@ import Image from "next/image";
 import PostComponent from "@/components/site/Blog/Post";
 import { client } from "../../../../../sanity/lib/client";
 import urlFor from "../../../../../sanity/lib/image";
+import { Metadata } from "next";
+import { getSinglePost } from "../../../../../sanity/utils/sanity.utils";
 
 
 
@@ -31,6 +33,8 @@ type Props = {
 
 
 export const revalidate = 60; // revalidate this page every 60 seconds
+
+
 
 
 function Tag({ params: { slug } }: Props) {
