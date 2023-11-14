@@ -221,5 +221,6 @@ interface ProductMarketing extends Base {
   strategies: string;
   slugtitle: string;
   image: string;
+  slug: Slug;
   video: Slug;
 }

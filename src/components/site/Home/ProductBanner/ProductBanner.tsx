@@ -6,8 +6,6 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 
 import { motion } from "framer-motion";
 
-
-import productBanner from "@/app/assets/prodbanner.png";
 import urlFor from "../../../../../sanity/lib/image";
 
 
@@ -33,7 +31,6 @@ const ProductBanner = ({ products }: Props) => {
               }}
             >
               <div className="w-full flex flex-col justify-center order-1 ">
-                
                 {product.image && (
                   <div className="max-w-md  lg:max-w-xl mx-auto">
                     <Image
@@ -47,19 +44,20 @@ const ProductBanner = ({ products }: Props) => {
                 )}
               </div>
 
-              {product.video &&
-               <div className="relative w-full md:order-2">
-              <iframe
-                width={560}
-                height={315}
-                src={`${product.video}`}
-                frameBorder={0}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title={"Youtube video"}
-                className="aspect-[16/9] h-full w-full p-0"
-              />
-            </div> }
+              {product.video && (
+                <div className="relative w-full md:order-2">
+                  <iframe
+                    width={560}
+                    height={315}
+                    src={`${product.video}`}
+                    frameBorder={0}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title={"Youtube video"}
+                    className="aspect-[16/9] h-full w-full p-0"
+                  />
+                </div>
+              )}
 
               <div className="flex flex-col text-left space-y-3 md:order-1 ">
                 <h2 className="font-Sohne-Bold  text-lg uppercase">
@@ -79,7 +77,10 @@ const ProductBanner = ({ products }: Props) => {
                 {product.strategies && (
                   <div className="grid grid-cols-2  gap-4 py-4 ">
                     {Array.from(product.strategies).map((strategy, id) => (
-                      <h4 key={id} className=" text-lg flex  flex-wrap gap-1 items-center">
+                      <h4
+                        key={id}
+                        className=" text-lg flex  flex-wrap gap-1 items-center"
+                      >
                         <span className="">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -113,31 +114,34 @@ const ProductBanner = ({ products }: Props) => {
                     ))}
                   </div>
                 )}
-                <Link href={"/landingpage"} className="self-start   ">
-                  <div className="group cursor-pointer font-Antonio inline-flex">
-                    <div className="mr-2 uppercase text-xl transition duration-700 group-hover:text-header-dark-overlay">
-                      Learn more
-                    </div>
-                    <div className="relative group-hover:text-header-dark-overlay self-end p-4 py-3 overflow-hidden font-medium transition duration-700 ease-out  text-2xl">
-                      <div className="">
-                        <span className="absolute inset-0 flex items-center justify-end w-full h-full text-white duration-500 group-hover:translate-x-[100%] bg-transparent -translate-x-[20%] ease">
-                          <div className="relative btn overflow-x-hidden flex justify-center items-center gap-3 text-lg ">
-                            <span>
-                              <HiArrowNarrowRight className="text-3xl text-white group-hover:text-header-dark-overlay" />
-                            </span>
-                          </div>
-                        </span>
-                        <span className="absolute inset-0 flex items-center justify-end w-full h-full text-white duration-500 -translate-x-[100%]  bg-transparent group-hover:translate-x-0 ease">
-                          <div className="relative btn overflow-x-hidden flex justify-center items-center gap-3 text-lg font-Antonio">
-                            <span>
-                              <HiArrowNarrowRight className="text-3xl text-white group-hover:text-header-dark-overlay " />
-                            </span>
-                          </div>
-                        </span>
+
+                {product.slug && product.slugtitle && (
+                  <Link href={`${product.slug.current}`} className="self-start   ">
+                    <div className="group cursor-pointer font-Antonio inline-flex ">
+                      <div className="mr-2 uppercase text-xl transition duration-700 group-hover:text-header-dark-overlay">
+                        {product.slugtitle}
+                      </div>
+                      <div className="relative group-hover:text-header-dark-overlay self-end p-4 py-3 overflow-hidden font-medium transition duration-700 ease-out  text-2xl">
+                        <div className="">
+                          <span className="absolute inset-0 flex items-center justify-end w-full h-full text-white duration-500 group-hover:translate-x-[100%] bg-transparent -translate-x-[20%] ease">
+                            <div className="relative btn overflow-x-hidden flex justify-center items-center gap-3 text-lg ">
+                              <span>
+                                <HiArrowNarrowRight className="text-3xl text-white group-hover:text-header-dark-overlay" />
+                              </span>
+                            </div>
+                          </span>
+                          <span className="absolute inset-0 flex items-center justify-end w-full h-full text-white duration-500 -translate-x-[100%]  bg-transparent group-hover:translate-x-0 ease">
+                            <div className="relative btn overflow-x-hidden flex justify-center items-center gap-3 text-lg font-Antonio">
+                              <span>
+                                <HiArrowNarrowRight className="text-3xl text-white group-hover:text-header-dark-overlay " />
+                              </span>
+                            </div>
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                )}
               </div>
             </motion.div>
           </div>
