@@ -4,11 +4,9 @@
   "private": true,
   "homepage": "https://durodolaabdulhad.com",
   "scripts": {
-
-
-    "dev": "next dev",
+    "dev": "node server.ts",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.ts"
   },
   "dependencies": {
     "@sanity/image-url": "^1.0.2",
