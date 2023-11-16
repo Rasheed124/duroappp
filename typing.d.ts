@@ -21,6 +21,7 @@ interface Post extends Base {
   reads: number;
   comments: Comment[];
   comment: number;
+  alt: string;
 }
 
 interface Comment extends Base {
@@ -39,6 +40,7 @@ interface Author extends Base {
   image: Image;
   name: string;
   slug: Slug;
+  alt: string;
 }
 
 interface Image {
@@ -92,6 +94,7 @@ interface Skill extends Base {
   description: string;
   title: string;
   image: Image;
+  alt: string;
 }
 interface Skills extends Base {
   name: string;
@@ -106,6 +109,7 @@ interface Projects extends Base {
   title: string;
   slug: Slug;
   projectImage: image;
+  alt: string;
 }
 
 // PROJECT FOR Product Visual DESIGN
@@ -122,6 +126,7 @@ interface ProjectTds extends Base {
   shareProject: string;
   projectlink: string;
   projectImage: image;
+  alt: string;
   projectContent: ProjectContent[];
 }
 
@@ -129,6 +134,8 @@ interface ProjectTds extends Base {
 interface ProjectContent extends Base {
   title: string;
   image: Image;
+  alt: string;
+
   url: string;
   video: string;
 }
@@ -144,6 +151,8 @@ interface Testimonial extends Base {
 interface Company extends Base {
   title: string;
   image: string;
+  alt: string;
+
   url: string;
 }
 
@@ -164,6 +173,7 @@ interface Awards extends Base {
   title: string;
   subtitle: string;
   image: string;
+  alt: string
   award: AwardTemplate[];
   certfication: AwardTemplate[];
   recognition: AwardTemplate[];
@@ -176,6 +186,7 @@ interface AwardTemplate extends Base {
   description: string;
   image: string;
   slug: string;
+  alt: string
 }
 
 // Contact
@@ -190,6 +201,7 @@ interface Contact extends Base {
   marquee: string;
   heading: string;
   resume: string;
+  alt: string;
 
   homeBannerAddress: string;
   homeBannerHandleText: string;
@@ -208,6 +220,7 @@ interface MarketWritings extends Base {
 interface WritingPost extends Base {
   title: string;
   image: string;
+  alt: string;
   url: string;
   description: string;
 }
@@ -221,6 +234,8 @@ interface ProductMarketing extends Base {
   strategies: string;
   slugtitle: string;
   image: string;
+  
   slug: Slug;
   video: Slug;
+  alt: string;
 }

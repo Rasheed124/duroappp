@@ -47,7 +47,7 @@ const BlogList = ({ blogs }: Props) => {
                 <PostComponent
                   slug={post.slug.current}
                   image={urlFor(post.mainImage).url()}
-                  imageAlt={post.title}
+                  imageAlt={post.alt}
                   title={post.title}
                   date={post._createdAt}
                   like={post.likes}

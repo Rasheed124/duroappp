@@ -102,30 +102,29 @@ function Awards({ awardsData }: Props) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center py-7"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-8 place-items-start py-7"
             >
               {displayedAwardsList.map((award) => (
                 <motion.div
                   key={award._id}
                   whileHover={{ scale: 1.02 }}
-                  className="flex flex-col-reverse justify-center items-center gap-7 group"
+                  className="flex flex-col-reverse justify-end items-end gap-7 group"
                 >
                   <motion.div
-                    className="w-full   order-1 cursor-pointer"
+                    className="   relative w-full h-[15vh] lg:h-[20vh] order-1 cursor-pointer"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}
                   >
                     <Image
                       src={award.image}
-                      alt=""
-                      className="max-w-full"
-                      width={700}
-                      height={240}
+                      alt={award.alt}
+                      className="w-full  object-contain object-center lg:object-left "
+                      fill
                     />
                   </motion.div>
                   <motion.div
-                    className="text-left space-y-3 cursor-pointer"
+                    className="text-center lg:text-left flex flex-col justify-center items-center lg:items-start space-y-3 cursor-pointer"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}

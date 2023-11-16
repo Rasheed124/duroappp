@@ -53,7 +53,7 @@ const Skills = ({ skills }: Props) => {
                     {skillDetail.image && (
                       <Image
                         src={urlFor(skillDetail.image).url()}
-                        alt={skillDetail.title}
+                        alt={skillDetail.alt}
                         fill
                         className="w-full absolute top-0 left-0 max-w-full"
                       />

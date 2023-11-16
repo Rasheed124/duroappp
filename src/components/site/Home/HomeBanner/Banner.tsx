@@ -49,7 +49,7 @@ const Banner = ({ contacts }: Props) => {
           <div className="hidden relative bg-cover bg-center bg-no-repeat min-h-[45vh] xl:flex justify-center items-center">
             <Image
               src={urlFor(contact.image).url()}
-              alt={"Home banner"}
+              alt={contact.alt}
               fill
               className="w-full "
             />

@@ -32,13 +32,13 @@ const ProductBanner = ({ products }: Props) => {
             >
               <div className="w-full flex flex-col justify-center order-1 ">
                 {product.image && (
-                  <div className="max-w-md  lg:max-w-xl mx-auto">
+                  <div className="max-w-lg relative lg:max-w-xl mx-auto">
                     <Image
                       src={urlFor(product.image).url()}
-                      alt=""
+                      alt={product.alt}
                       width={500}
                       height={500}
-                      className="max-w-full "
+                      className="max-w-full  "
                     />
                   </div>
                 )}
@@ -107,7 +107,7 @@ const ProductBanner = ({ products }: Props) => {
                           </svg>
                         </span>
 
-                        <span className="font-medium whitespace-nowrap">
+                        <span className="font-medium whitespace-normal xl:whitespace-nowrap">
                           {strategy}
                         </span>
                       </h4>

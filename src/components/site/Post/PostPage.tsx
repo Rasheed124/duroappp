@@ -321,7 +321,7 @@ function PostPage({ params: { slug } }: Props) {
                       <Image
                         className="rounded-full object-cover mr-2"
                         src={urlFor(post.author.image).url()}
-                        alt={post.author.name}
+                        alt={post.author.alt}
                         width={50}
                         height={50}
                       />

@@ -47,7 +47,7 @@ const PostList = ({ postList }: Props) => {
                             <Image
                               className="max-w-full"
                               src={urlFor(post.mainImage).url()}
-                              alt={post.title}
+                              alt={post.alt}
                               width={700}
                               height={700}
                             />

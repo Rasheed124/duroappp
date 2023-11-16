@@ -56,7 +56,7 @@ const MarketWriting = ({ marketwritings }: Props) => {
                           <Image
                             className="object-cover max-w-full"
                             src={urlFor(writing.image).url()}
-                            alt={writing.title}
+                            alt={writing.alt}
                             fill
                           />
                         </div>

@@ -25,6 +25,14 @@ export default defineType({
       options: {
         hotspot: true,
       },
+
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text",
+        },
+      ],
     }),
 
     defineField({
@@ -39,7 +47,7 @@ export default defineType({
       type: "array",
       of: [{ type: "reference", to: { type: "company" } }],
     }),
-    
+
     defineField({
       name: "resume",
       title: "Resume File",

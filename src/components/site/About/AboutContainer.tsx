@@ -581,7 +581,7 @@ const AboutContainer = ({ abouts, contactPage, awards}: Props) => {
                       <div className="mb-5  scale-0 group-hover:scale-110 ease-in  duration-500 absolute w-[120px] h-[100px]  -top-7 right-10  ">
                         <Image
                           src={company.image}
-                          alt={company.title}
+                          alt={company.alt}
                           fill
                           className="w-full max-w-full"
                         />

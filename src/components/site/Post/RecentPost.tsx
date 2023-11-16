@@ -63,7 +63,7 @@ export default  function RecentPost( ) {
                     <Image
                       className=" max-w-full lg:object-center"
                       src={urlFor(post.mainImage).url()}
-                      alt={post.title}
+                      alt={post.alt}
                       fill
                     />
                   </div>

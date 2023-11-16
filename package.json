@@ -2,11 +2,10 @@
   "name": "duroapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://durodolaabdulhad.com",
   "scripts": {
-    "dev": "node server.ts",
+    "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production node server.ts"
+    "start": "next start"
   },
   "dependencies": {
     "@sanity/image-url": "^1.0.2",
